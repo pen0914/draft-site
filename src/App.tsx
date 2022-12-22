@@ -1,5 +1,15 @@
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./route/Router";
+import theme from "./theme/theme";
 import "./styles.css";
 
 export default function App() {
-  return <div className="App"></div>;
+  return (
+    <ChakraProvider theme={theme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ChakraProvider>
+  );
 }
