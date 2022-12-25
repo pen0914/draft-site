@@ -1,25 +1,20 @@
-import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { VFC, memo } from "react";
 
+import Css from "../css/layout/HeaderCss.module.scss";
+
 export const Header: VFC = memo(() => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const {} = useDisclosure();
   return (
     <>
-      <Flex as="nav" bg="green" padding="15px 0">
-        <Flex
-          align="center"
-          display="center"
-          as="a"
-          mr={8}
-          _hover={{ cursor: "pointer" }}
-        >
-          <Link>O</Link>
-          <Heading as="h1" fontSize={{ base: "md", md: "lg" }}>
-            デモサイト
-          </Heading>
-          <Link>O</Link>
-        </Flex>
-      </Flex>
+      <div className={Css.FirstDiv}>
+        <div className={Css.SecondDiv}>
+          <Link className={Css.Link1}>O</Link>
+          <Link className={Css.Link2}>デモサイト</Link>
+          <Link className={Css.Link3}>O</Link>
+        </div>
+      </div>
     </>
   );
 });
