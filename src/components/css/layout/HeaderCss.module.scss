@@ -1,29 +1,26 @@
 .FirstDiv{
-  background-color:green;
-  padding:15px 0;
+  background-color:rgba(58, 128, 122, 0.767);
+  height:15%;
   position:fixed;
   top:0;
   right:0;
   left:0;
-  
-}
 
-.SecondDiv{ 
-  display:grid;
- 
-  hover{
+  text-align:center;
+  align-items: center;
+  
+  display:flex;
+  justify-content:space-between ;
+
+
+hover{
      cursor: "pointer" }
 }
 
-.Link1{
-  grid-column:1;
-
-}
 .Link2{
-  grid-column:2;
-
+  flex-basis:50%;
 }
 .Link3{
-  grid-column: 3;
- 
+
+  margin-right:15px;
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../../styles.css";
 
+import Css from "../css/pages/HomeCss.module.scss";
+
 export const Home = () => {
   const [items, setItems] = useState([
     {
@@ -96,20 +98,18 @@ export const Home = () => {
   ]);
   return (
     <>
-      <div className="main">
-        <div className="item-container">
-          {items.map((oneitem, index) => {
-            return (
-              <div key={oneitem.id} className="item">
-                <img src={oneitem.image} className="pic" alt="" />
-                <div className="explain">
-                  <p className="title">{oneitem.name}</p>
-                  <p>{oneitem.price}</p>
-                </div>
+      <div className={Css.itemContainer}>
+        {items.map((oneitem, index) => {
+          return (
+            <div key={oneitem.id} className={Css.item}>
+              <img src={oneitem.image} className={Css.pic} alt="" />
+              <div className={Css.explain}>
+                <p className={Css.title}>{oneitem.name}</p>
+                <p>{oneitem.price}</p>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );

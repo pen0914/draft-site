@@ -2,7 +2,6 @@ import { Route, Switch } from "react-router-dom";
 import { HomeRoutes } from "./HomeRoutes";
 import { HeaderLayout } from "../components/template/HeaderLayout";
 import { Page404 } from "../components/pages/Page404";
-import { Home } from "../components/pages/Home";
 
 export const Router = () => {
   return (
