@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../../styles.css";
-import { useHistory } from "react-router-dom";
-
-import Css from "../css/pages/HomeCss.module.scss";
+import { useState } from "react-router-dom";
 
 export const Home = () => {
   const [items, setItems] = useState([
@@ -114,30 +109,4 @@ export const Home = () => {
       price: "￥5,900"
     }
   ]);
-
-  const history = useHistory();
-
-  const onClickPage = () => {
-    history.push(`/home/${items.brand}/${items.name}`);
-  };
-
-  return (
-    <>
-      <div className={Css.itemContainer}>
-        {items.map((oneitem, index) => {
-          return (
-            <div key={oneitem.id} onClick={onClickPage} className={Css.item}>
-              <img src={oneitem.image} className={Css.pic} alt="" />
-              <div className={Css.explain}>
-                <p className={Css.brand}>{`【${oneitem.brand}】`}</p>
-                <p className={Css.title}>{oneitem.name}</p>
-
-                <p>{oneitem.price}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
 };
