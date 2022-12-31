@@ -1,6 +1,6 @@
 import { useState } from "react-router-dom";
 
-export const Home = () => {
+export const Item = () => {
   const [items, setItems] = useState([
     {
       image:
@@ -109,4 +109,16 @@ export const Home = () => {
       price: "￥5,900"
     }
   ]);
+
+  const onClickSelect = () => {
+    setItems();
+  };
+
+  return (
+    <div>
+      {items.map((oneitem, index) => {
+        return <div>{oneitem.name}</div>;
+      })}
+    </div>
+  );
 };

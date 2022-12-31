@@ -96,7 +96,7 @@ export const Home = () => {
       image:
         "https://lh3.googleusercontent.com/pw/AL9nZEV4oGvK26TcX5TQwqhgcBfXagwPHcwD7Kc-Q5ac6EJt1-v7DDl6NecWJkBdEjx8f-z47UVc4tagAs4QPTIW-Nv3pw5Y8Vb0rcczeKYNYpzLtZ4UENeUYIHELPv3kTP4VmXqZUvgOgnUflTs3UQzYEY=s909-no?authuser=0",
       brand: "Vintage",
-      name: "track jacket",
+      name: "trackjacket",
       price: "￥3,100"
     },
     {
@@ -117,8 +117,8 @@ export const Home = () => {
 
   const history = useHistory();
 
-  const onClickPage = () => {
-    history.push(`/home/${items.brand}/${items.name}`);
+  const onClickPage = (oneitem) => {
+    history.push(`/home/${oneitem.brand}/${oneitem.name}`);
   };
 
   return (
@@ -126,7 +126,11 @@ export const Home = () => {
       <div className={Css.itemContainer}>
         {items.map((oneitem, index) => {
           return (
-            <div key={oneitem.id} onClick={onClickPage} className={Css.item}>
+            <div
+              key={oneitem.id}
+              onClick={() => onClickPage(oneitem)}
+              className={Css.item}
+            >
               <img src={oneitem.image} className={Css.pic} alt="" />
               <div className={Css.explain}>
                 <p className={Css.brand}>{`【${oneitem.brand}】`}</p>
