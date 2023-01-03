@@ -5,7 +5,6 @@ export const Cart: VFC = memo(() => {
     <>
       <p>カートページです。</p>
       <p>表示されません。</p>
-
       <br />
       <p>ああああ</p>
     </>

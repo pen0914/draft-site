@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles.css";
 import { useHistory } from "react-router-dom";
+import { ItemContext } from "../provider/ItemProvider";
 
 import Css from "../css/pages/HomeCss.module.scss";
 
 export const Home = () => {
-  const [items, setItems] = useState([
+  const items = [
     {
       image:
         "https://lh3.googleusercontent.com/pw/AL9nZEWcn_N_KUjaLKOHqeTSgTBXw0DttVQzond8Ms9OVr1fkXwSGnSwZbEPOJBGA26J4IQEMRO94PXlE5hp0rZ25HHV9g1IuQscSeoM69lemsuWJZM3137gzjZ10yX1fDjVkZNjBeHeCq3WdeXE7M3aIv0=s909-no?authuser=0",
@@ -113,12 +114,15 @@ export const Home = () => {
       name: "nylon pullover",
       price: "￥5,900"
     }
-  ]);
+  ];
 
+  const Data = React.useContext(ItemContext);
   const history = useHistory();
 
-  const onClickPage = (oneitem) => {
-    history.push(`/home/${oneitem.brand}/${oneitem.name}`);
+  const onClickPage = () => {
+    console.log(Data);
+    // console.log(items[index]);
+    // history.push(`/home/${oneitem.brand}/${oneitem.name}`);
   };
 
   return (
@@ -126,11 +130,7 @@ export const Home = () => {
       <div className={Css.itemContainer}>
         {items.map((oneitem, index) => {
           return (
-            <div
-              key={oneitem.id}
-              onClick={() => onClickPage(oneitem)}
-              className={Css.item}
-            >
+            <div key={oneitem.id} onClick={onClickPage} className={Css.item}>
               <img src={oneitem.image} className={Css.pic} alt="" />
               <div className={Css.explain}>
                 <p className={Css.brand}>{`【${oneitem.brand}】`}</p>
