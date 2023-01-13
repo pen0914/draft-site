@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode, VFC } from "react";
 
 type Part = {
   id: number;
@@ -8,7 +8,11 @@ type Part = {
   price: string;
 };
 
-export const ItemContext = React.createContext<Array<Part>>([
+type Props = {
+  children: ReactNode;
+};
+
+export const ItemContext = React.createContext<Part[]>([
   {
     id: 1,
     image:
@@ -131,3 +135,16 @@ export const ItemContext = React.createContext<Array<Part>>([
     price: "￥5,900"
   }
 ]);
+
+/*
+export const ItemProvider: VFC<Props> = (props) => {
+  const { children } = props;
+
+  const [itemPick, setItemPick] = React.useState(null);
+  return (
+    <ItemContext.Provider value={{ itemPick, setItemPick }}>
+      {children}
+    </ItemContext.Provider>
+  );
+}; 
+*/
