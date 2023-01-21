@@ -10,6 +10,7 @@ export const Home = () => {
   const history = useHistory();
 
   const onClickPage = (index) => {
+    const itemNumber = items[index];
     history.push(`/home/${items[index].brand}/${items[index].name}`);
   };
 
