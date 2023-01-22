@@ -1,14 +1,18 @@
 import React, { VFC, memo } from "react";
+import { useLocation } from "react-router-dom";
 
 import { ItemContext } from "../../../provider/ItemProvider";
 
-export const TrackJacket51: VFC = memo(() => {
+export const SelectItem: VFC = memo(() => {
+  //後で削除
   const items = React.useContext(ItemContext);
-  const res = items.find((items) => items.id === 1);
+  const { state } = useLocation();
+
+  const res = items.find((items) => items.id === state);
   return (
     <>
       <div>
-        <image />
+        <img alt={res.name} src={res.image} />
       </div>
       <div>
         <div>

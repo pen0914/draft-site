@@ -9,9 +9,8 @@ export const Home = () => {
   const items = React.useContext(ItemContext);
   const history = useHistory();
 
-  const onClickPage = (index) => {
-    const itemNumber = items[index];
-    history.push(`/home/${items[index].brand}/${items[index].name}`);
+  const onClickPage = (id: number) => {
+    history.push({ pathname: `/home/${id}`, state: { id } });
   };
 
   return (
@@ -21,7 +20,7 @@ export const Home = () => {
           return (
             <div
               key={oneitem.id}
-              onClick={() => onClickPage(index)}
+              onClick={() => onClickPage(oneitem.id)}
               className={Css.item}
             >
               <img src={oneitem.image} className={Css.pic} alt="" />
