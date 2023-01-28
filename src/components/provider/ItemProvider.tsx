@@ -1,19 +1,8 @@
 import React from "react";
 
-//データ配列の型指定
-type Part = {
-  id: number;
-  image: string;
-  brand: string;
-  name: string;
-  price: string;
-  category: string;
-  condition: string;
-  detail: string;
-  size: string;
-};
+import { Item } from "../../type/api/Item";
 
-export const ItemContext = React.createContext<Part[]>([
+export const ItemContext = React.createContext<Item[]>([
   {
     id: 1,
     image:
@@ -25,7 +14,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "トラックジャケット",
     detail: "ベロア生地",
     size: "M",
-    condition: "A"
+    condition: "A",
+    partNumber: "1n21u"
   },
   {
     id: 2,
@@ -38,7 +28,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "スウェット",
     detail: "ポケット付き",
     size: "M",
-    condition: "C"
+    condition: "C",
+    partNumber: "1n21sdsd"
   },
   {
     id: 3,
@@ -51,7 +42,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "トラックジャケット",
     detail: "裏地にメッシュ",
     size: "M",
-    condition: "A"
+    condition: "A",
+    partNumber: "1nssa1u"
   },
   {
     id: 4,
@@ -64,7 +56,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "トラックパンツ",
     detail: "サイドラインに刺繍",
     size: "S",
-    condition: "B"
+    condition: "B",
+    partNumber: "adsn21u"
   },
   {
     id: 5,
@@ -77,7 +70,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "スラックス",
     detail: "ペイズリー柄",
     size: "S",
-    condition: "B"
+    condition: "B",
+    partNumber: "1nsmhty1u"
   },
   {
     id: 6,
@@ -90,7 +84,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "バケットハット",
     detail: "紐付き",
     size: "M",
-    condition: "A"
+    condition: "A",
+    partNumber: "5y3ru"
   },
   {
     id: 7,
@@ -103,7 +98,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "バケットハット",
     detail: "チェック柄",
     size: "M",
-    condition: "A"
+    condition: "A",
+    partNumber: "86wvnn2"
   },
   {
     id: 8,
@@ -116,7 +112,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "ビーニー",
     detail: "ロゴ刺繍",
     size: "S",
-    condition: "B"
+    condition: "B",
+    partNumber: "1k2dv7"
   },
   {
     id: 9,
@@ -129,7 +126,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "バケットハット",
     detail: "リバーシブル",
     size: "M",
-    condition: "A"
+    condition: "A",
+    partNumber: "21u852"
   },
   {
     id: 10,
@@ -142,7 +140,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "スーベニアジャケット",
     detail: "胸元、袖、バックに刺繍",
     size: "M",
-    condition: "A"
+    condition: "A",
+    partNumber: "ika2ce"
   },
   {
     id: 11,
@@ -155,7 +154,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "トラックジャケット",
     detail: "ベロア生地",
     size: "M",
-    condition: "B"
+    condition: "B",
+    partNumber: "11u994f"
   },
   {
     id: 12,
@@ -168,7 +168,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "トラックジャケット",
     detail: "裏地にフリース生地",
     size: "M",
-    condition: "B"
+    condition: "B",
+    partNumber: "1nwa103u"
   },
   {
     id: 13,
@@ -181,7 +182,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "トラックジャケット",
     detail: "首元、袖に刺繍",
     size: "M",
-    condition: "B"
+    condition: "B",
+    partNumber: "900snu"
   },
   {
     id: 14,
@@ -194,7 +196,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "ベスト",
     detail: "胸元に刺繍",
     size: "M",
-    condition: "C"
+    condition: "C",
+    partNumber: "121unfqwu"
   },
   {
     id: 15,
@@ -207,7 +210,8 @@ export const ItemContext = React.createContext<Part[]>([
     category: "プルオーバー",
     detail: "胸元に刺繍",
     size: "M",
-    condition: "B"
+    condition: "B",
+    partNumber: "1wefu5u"
   }
 ]);
 

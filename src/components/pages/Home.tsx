@@ -13,18 +13,20 @@ export const Home = () => {
   const history = useHistory();
 
   //アイテム画像からページ遷移する(idを渡す)
-  const onClickPage = (id: number) => {
-    history.push({ pathname: `/home/select/?id=${id}`, state: { id } });
+  const onClickPage = (partNumber: string) => {
+    history.push({
+      pathname: `/home/select/${partNumber}`
+    });
   };
 
   return (
     <>
       <div className={Css.itemContainer}>
-        {items.map((oneitem, index) => {
+        {items.map((oneitem) => {
           return (
             <div
               key={oneitem.id}
-              onClick={() => onClickPage(oneitem.id)}
+              onClick={() => onClickPage(oneitem.partNumber)}
               className={Css.item}
             >
               <img src={oneitem.image} className={Css.pic} alt="" />

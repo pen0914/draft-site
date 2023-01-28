@@ -5,7 +5,7 @@ type Props = {
   res: Item;
 };
 
-export const SelectItem: VFC<Props> = memo((props) => {
+export const ItemDetail: VFC<Props> = memo((props) => {
   const { res } = props;
   //詳細ページを返す
   return (

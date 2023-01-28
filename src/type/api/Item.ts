@@ -1,4 +1,4 @@
-export type Part = {
+export type Item = {
   id: number;
   image: string;
   brand: string;
@@ -8,4 +8,5 @@ export type Part = {
   condition: string;
   detail: string;
   size: string;
+  partNumber: string;
 };
