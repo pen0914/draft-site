@@ -5,6 +5,8 @@ import { DetailRoute } from "../route/DetailRoute";
 
 export const HomeRoutes = [
   { path: "/", exact: "false", children: <Home /> },
+
+  //ページ遷移方法を探す
   { path: "/select", exact: "true", children: <DetailRoute /> },
 
   {
