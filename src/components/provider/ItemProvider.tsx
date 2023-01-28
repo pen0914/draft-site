@@ -1,5 +1,6 @@
 import React from "react";
 
+//データ配列の型指定
 type Part = {
   id: number;
   image: string;

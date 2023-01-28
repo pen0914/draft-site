@@ -1,14 +1,13 @@
 import React, { VFC, memo } from "react";
-import { useLocation } from "react-router-dom";
+import { Item } from "../../type/api/Item";
 
-import { ItemContext } from "../../../provider/ItemProvider";
+type Props = {
+  res: Item;
+};
 
-export const SelectItem: VFC = memo(() => {
-  //後で削除
-  const items = React.useContext(ItemContext);
-  const { state } = useLocation();
-
-  const res = items.find((items) => items.id === state);
+export const SelectItem: VFC<Props> = memo((props) => {
+  const { res } = props;
+  //詳細ページを返す
   return (
     <>
       <div>

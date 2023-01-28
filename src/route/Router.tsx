@@ -9,6 +9,7 @@ export const Router = () => {
       <Route
         path="/home"
         render={({ match: { url } }) => (
+          //HomeRoutesコンポーネントの配列から一致するページ遷移
           <Switch>
             {HomeRoutes.map((route) => (
               <Route

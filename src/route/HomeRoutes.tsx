@@ -1,13 +1,11 @@
 import { Home } from "../components/pages/Home";
 import { Cart } from "../components/pages/Cart";
 import { Page404 } from "../components/pages/Page404";
-import { SelectItem } from "../components/pages/itemDetail/vintage/SelectItem";
-
-//import { Item } from "../item/ItemData";
+import { DetailRoute } from "../route/DetailRoute";
 
 export const HomeRoutes = [
-  { path: "/", exact: "true", children: <Home /> },
-  { path: "/${id}", exact: "false", children: <SelectItem /> },
+  { path: "/", exact: "false", children: <Home /> },
+  { path: "/select", exact: "true", children: <DetailRoute /> },
 
   {
     path: "/cart",

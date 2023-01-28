@@ -6,11 +6,15 @@ import { ItemContext } from "../provider/ItemProvider";
 import Css from "../css/pages/HomeCss.module.scss";
 
 export const Home = () => {
+  //データを取得
   const items = React.useContext(ItemContext);
+
+  //ページ遷移に要するhistoryを取得
   const history = useHistory();
 
+  //アイテム画像からページ遷移する(idを渡す)
   const onClickPage = (id: number) => {
-    history.push({ pathname: `/home/${id}`, state: { id } });
+    history.push({ pathname: `/home/select/?id=${id}`, state: { id } });
   };
 
   return (
