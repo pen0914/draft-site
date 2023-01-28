@@ -17,6 +17,7 @@ export const DetailRoute: VFC = memo(() => {
   const location = useLocation();
   const params = location.search;
   console.log(params);
+  //?以降のidを取り出す→
 
   //データからidに匹敵するデータのみを選択
   const res = items.find((items) => items.id === state.id);
