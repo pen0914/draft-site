@@ -1,6 +1,6 @@
 .header-name {
-  color: rgb(18, 159, 154);
-  font-family: "cherry Swash", cursive;
+  color: rgb(254, 254, 254);
+  //font-family: "cherry Swash", cursive;
 }
 
 
@@ -20,8 +20,9 @@
   
   max-width: 250px;
   margin: 20px 10px;
-  box-shadow: 0 0 6px #e8e8e8;
-  background-color: #b15804;
+  box-shadow: 0 0 6px #000000;
+  background-color: #d9d8d7;
+  border-radius: 10px;
   cursor: pointer;
   
 
@@ -36,6 +37,5 @@
 
 .explain {
   height: 120px;
-
 }
 
