@@ -1,11 +1,11 @@
-import React from "react";
+import React, { memo } from "react";
 import "../../styles.css";
 import { useHistory } from "react-router-dom";
 import { ItemContext } from "../provider/ItemProvider";
 
-import Css from "../css/pages/HomeCss.module.scss";
+import { HomeLayout } from "../layout/HomeLayout";
 
-export const Home = () => {
+export const Home = memo(() => {
   //データを取得
   const items = React.useContext(ItemContext);
 
@@ -19,27 +19,5 @@ export const Home = () => {
     });
   };
 
-  return (
-    <>
-      <div className={Css.itemContainer}>
-        {items.map((oneitem) => {
-          return (
-            <div
-              key={oneitem.id}
-              onClick={() => onClickPage(oneitem.partNumber)}
-              className={Css.item}
-            >
-              <img src={oneitem.image} className={Css.pic} alt="" />
-              <div className={Css.explain}>
-                <p className={Css.brand}>{`【${oneitem.brand}】`}</p>
-                <p className={Css.title}>{oneitem.name}</p>
-
-                <p>{oneitem.price}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
-};
+  return <HomeLayout items={items} onClickPage={onClickPage} />;
+});

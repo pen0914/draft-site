@@ -1,46 +1,21 @@
-import React, { VFC, memo } from "react";
+import React, { memo } from "react";
+import { useParams } from "react-router-dom";
+
+import { ItemDetailLayout } from "../layout/ItemDetailLayout";
+import { ItemContext } from "../provider/ItemProvider";
+
 import { Item } from "../../type/api/Item";
 
-type Props = {
-  res: Item;
-};
+export const ItemDetail = memo(() => {
+  //データを取得
+  const items: Array<Item> = React.useContext(ItemContext);
 
-export const ItemDetail: VFC<Props> = memo((props) => {
-  const { res } = props;
-  //詳細ページを返す
-  return (
-    <>
-      <div>
-        <img alt={res.name} src={res.image} />
-      </div>
-      <div>
-        <div>
-          <p>{res.name}</p>
-          <p>{res.price}</p>
-        </div>
-        <div>
-          <div>
-            <p>[brand]</p>
-            <p>{res.brand}</p>
-          </div>
-          <div>
-            <p>[category]</p>
-            <p>{res.category}</p>
-          </div>
-          <div>
-            <p>[detail]</p>
-            <p>{res.detail}</p>
-          </div>
-          <div>
-            <p>[size]</p>
-            <p>{res.size}</p>
-          </div>
-          <div>
-            <p>[condition]</p>
-            <p>{res.condition}</p>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+  //useParamsでclickから渡されたpartNumberを取り出す
+  const params: { clickNumber: string } = useParams();
+  const partNumber = params.clickNumber;
+
+  //同じpartNumberを持つデータのみを取り出す
+  const res = items.find((items) => items.partNumber === partNumber);
+
+  return <ItemDetailLayout res={res} />;
 });
