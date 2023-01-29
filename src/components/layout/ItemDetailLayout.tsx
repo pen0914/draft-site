@@ -1,4 +1,5 @@
-import React, { VFC, memo } from "react";
+import React, { VFC, memo, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { Item } from "../../type/api/Item";
 
@@ -8,6 +9,22 @@ type Props = {
 
 export const ItemDetailLayout: VFC<Props> = memo((props) => {
   const { res } = props;
+
+  const history = useHistory();
+
+  //カートに品番を渡す
+  const [cartItem, setCartItem] = useState<Array<string>>([]);
+  const onClickCart = (partNumber: string) => {
+    setCartItem([...cartItem, `${res.partNumber}`]);
+    //読み込み
+    //cartページへ移動
+    history.push({
+      pathname: "/home/cart",
+      state: { cartItem }
+    });
+    //データ(state)を渡す
+  };
+
   //詳細ページを返す
   return (
     <>
@@ -18,6 +35,11 @@ export const ItemDetailLayout: VFC<Props> = memo((props) => {
         <div>
           <p>{res.name}</p>
           <p>{res.price}</p>
+        </div>
+        <div>
+          <button onClick={() => onClickCart(res.partNumber)}>
+            カートに入れる
+          </button>
         </div>
         <div>
           <div>

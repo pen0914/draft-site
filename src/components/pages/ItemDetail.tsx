@@ -16,5 +16,6 @@ export const ItemDetail = memo(() => {
 
   //同じpartNumberを持つデータのみを取り出す
   const res = items.find((items) => items.partNumber === partNumber);
+
   return <ItemDetailLayout res={res} />;
 });
