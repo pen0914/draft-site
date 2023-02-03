@@ -1,7 +1,9 @@
+import { css } from "@emotion/react";
 import React, { VFC, memo, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Item } from "../../type/api/Item";
+import Css from "../css/pages/ItemDetailCss.module.scss";
 
 type Props = {
   res: Item;
@@ -28,37 +30,43 @@ export const ItemDetailLayout: VFC<Props> = memo((props) => {
   //詳細ページを返す
   return (
     <>
+      <p className={Css.pic}>
+        <img
+          alt={res.name}
+          src={res.image}
+          className={Css.image}
+          width="400px"
+        />
+        <br />
+
+        {res.name}
+        <br />
+        {res.price}
+      </p>
       <div>
-        <img alt={res.name} src={res.image} />
-      </div>
-      <div>
-        <div>
-          <p>{res.name}</p>
-          <p>{res.price}</p>
-        </div>
         <div>
           <button onClick={() => onClickCart(res.partNumber)}>
             カートに入れる
           </button>
         </div>
-        <div>
-          <div>
+        <div className={Css.explain}>
+          <div className={Css.brand}>
             <p>[brand]</p>
             <p>{res.brand}</p>
           </div>
-          <div>
+          <div className={Css.category}>
             <p>[category]</p>
             <p>{res.category}</p>
           </div>
-          <div>
+          <div className={Css.detail}>
             <p>[detail]</p>
             <p>{res.detail}</p>
           </div>
-          <div>
+          <div className={Css.size}>
             <p>[size]</p>
             <p>{res.size}</p>
           </div>
-          <div>
+          <div className={Css.condition}>
             <p>[condition]</p>
             <p>{res.condition}</p>
           </div>
