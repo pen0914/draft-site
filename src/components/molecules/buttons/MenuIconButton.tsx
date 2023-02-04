@@ -11,9 +11,9 @@ export const MenuIconButton: VFC<Props> = memo((props) => {
   return (
     <IconButton
       aria-label="メニューボタン"
+      size="sm"
       icon={<HamburgerIcon />}
       variant="unstyled"
-      display={{ base: "block", md: "none" }}
       onClick={onOpen}
     />
   );

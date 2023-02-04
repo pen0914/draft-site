@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Button,
   Drawer,
@@ -14,6 +16,7 @@ type Props = {
 
 export const MenuDrawer: VFC<Props> = memo((props) => {
   const { onClose, isOpen } = props;
+
   return (
     <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay>
@@ -21,7 +24,14 @@ export const MenuDrawer: VFC<Props> = memo((props) => {
           <DrawerBody p={0} bg="gray.100">
             <Button w="100%">TOP</Button>
             <Button w="100%">ユーザー一覧</Button>
-            <Button w="100%">設定</Button>
+            <Button
+              // outlineWidth="3px"
+              outline-style="solid"
+              // outlineColor="black"
+              w="100%"
+            >
+              設定
+            </Button>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
