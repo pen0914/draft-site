@@ -1,6 +1,6 @@
 import { useDisclosure } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { VFC, memo } from "react";
+import React, { VFC, memo } from "react";
 import { BsCart2 } from "react-icons/bs";
 
 import Css from "../css/layout/HeaderCss.module.scss";
@@ -13,10 +13,10 @@ export const Header: VFC = memo(() => {
     <>
       <div className={Css.FirstDiv}>
         <MenuIconButton onOpen={onOpen} />
-        <Link to="/home" className={Css.Link2}>
+        <Link to="/" className={Css.Link2}>
           デモサイト
         </Link>
-        <Link to="/home/cart" className={Css.Link3}>
+        <Link to="/cart" className={Css.Link3}>
           <BsCart2 size={"20px"} />
         </Link>
         <MenuDrawer onClose={onClose} isOpen={isOpen} />

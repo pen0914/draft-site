@@ -15,7 +15,7 @@ export const Home = memo(() => {
   //アイテム画像からページ遷移する(idを渡す)
   const onClickPage = (partNumber: string) => {
     history.push({
-      pathname: `/home/select/${partNumber}`
+      pathname: `/select/${partNumber}`
     });
   };
 

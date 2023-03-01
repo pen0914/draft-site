@@ -21,7 +21,7 @@ export const ItemDetailLayout: VFC<Props> = memo((props) => {
     //読み込み
     //cartページへ移動
     history.push({
-      pathname: "/home/cart",
+      pathname: "/cart",
       state: { cartItem }
     });
     //データ(state)を渡す

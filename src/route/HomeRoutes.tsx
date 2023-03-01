@@ -5,13 +5,13 @@ import { Page404 } from "../components/pages/Page404";
 import { ItemDetail } from "../components/pages/ItemDetail";
 
 export const HomeRoutes = [
-  { path: "/", exact: false, children: <Home /> },
+  { path: "/", exact: true, children: <Home /> },
 
   //ページ遷移方法を探す
-  { path: "/select/:clickNumber", exact: true, children: <ItemDetail /> },
+  { path: "select/:clickNumber", exact: true, children: <ItemDetail /> },
 
   {
-    path: "/cart",
+    path: "cart",
     exact: false,
     children: <Cart />
   },
