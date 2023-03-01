@@ -1,4 +1,4 @@
-import { VFC, memo } from "react";
+import React, { VFC, memo } from "react";
 
 export const Cart: VFC = memo(() => {
   return (

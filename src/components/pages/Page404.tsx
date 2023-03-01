@@ -1,4 +1,4 @@
-import { VFC, memo } from "react";
+import React, { VFC, memo } from "react";
 
 export const Page404: VFC = memo(() => {
   return <p>404ページです</p>;
