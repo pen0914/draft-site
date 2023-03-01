@@ -1,4 +1,4 @@
-import { memo, VFC } from "react";
+import React, { memo, VFC } from "react";
 import Css from "../css/pages/HomeCss.module.scss";
 
 import { Item } from "../../type/api/Item";

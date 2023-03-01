@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Button,
   Drawer,
@@ -7,7 +5,7 @@ import {
   DrawerContent,
   DrawerOverlay
 } from "@chakra-ui/react";
-import { VFC, memo } from "react";
+import React, { VFC, memo } from "react";
 
 type Props = {
   onClose: () => void;
@@ -23,15 +21,13 @@ export const MenuDrawer: VFC<Props> = memo((props) => {
         <DrawerContent>
           <DrawerBody p={0} bg="gray.100">
             <Button w="100%">TOP</Button>
-            <Button w="100%">ユーザー一覧</Button>
+            <Button w="100%">カテゴリ</Button>
             <Button
               // outlineWidth="3px"
               outline-style="solid"
               // outlineColor="black"
               w="100%"
-            >
-              設定
-            </Button>
+            ></Button>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
